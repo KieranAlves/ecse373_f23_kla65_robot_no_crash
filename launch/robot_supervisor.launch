@@ -1,0 +1,3 @@
+<launch>
+    <node name="robot_no_crash" type="movement_reader_node" pkg="robot_no_crash" output="screen" />
+</launch>

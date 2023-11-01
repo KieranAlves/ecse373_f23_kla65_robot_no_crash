@@ -1,0 +1,13 @@
+<launch>
+
+    <arg name="robot_ns" default="robot0" />
+
+    <param name="$(arg robot_ns)/wall_dist" value="0.5" type="double" />
+
+    <include file="$(find stdr_launchers)/launch/server_with_map_and_gui_plus_robot.launch" />
+    <include file="$(find robot_no_crash)/launch/robot_supervisor.launch" ns="$(arg robot_ns)" >
+        <remap from="/laser_1" to="/laser_0"/>
+    </include>
+    <node name="gui" pkg="rqt_gui" type="rqt_gui" />
+
+</launch>
